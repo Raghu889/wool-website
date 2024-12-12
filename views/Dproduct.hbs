@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/detailedProduct.css">
+    <title>Wool Order Page</title>
+    
+    
+</head>
+<body>
+
+    <div class="main-top">
+        <div class="logo-div">
+            <img src="/images/logo-removebg-preview.png" alt="Woolymo Logo" class="logo">
+            <h1 class="logo-name">Woolymo</h1>
+        </div>
+        <div class="search-div">
+            {{!-- <input type="text" placeholder="Search here" class="search-bar">
+            <img src="/images/WhatsApp Image 2023-12-06 at 18.56.14_bc3f23bf.jpg" alt="Search Icon" class="search-icon"> --}}
+        </div>
+        <div class="space"></div>
+        <div class="profile-div">
+             <ul>
+            {{#if currentUser}}
+           <li class="list1"><a href="/profile"> <img src="{{user.image}}" alt="User Profile" class="user-profile"></a><p>{{user.name}}</p></li>
+           {{else}}
+           <li class="list2"><a href="/login"> <img src="/images/WhatsApp_Image_2023-12-06_at_18.56.13_adc62e0f-removebg-preview.png" alt="User Profile" class="user-profile"></a><p>Login</p></li>
+           {{/if}}
+           </ul>
+        </div>
+    </div>
+    <nav class="navigation-div">
+        <a href=""></a>
+        <a href="/homepage" class="Home">Home</a>
+        <a href="/orders" class="Orders">Orders</a>
+        <a href="/products"  class="Products">Products</a>
+        <a href="/cart" class="About-us">cart</a>
+        <a href="/about " class="Contact-us">Contact us</a>
+        <a href=""></a>
+    </nav>
+
+<div class="container">
+    <div class="image-container" style="padding: 100px;padding-top: 50px;border: solid black 1px;">
+        <img src="{{product.imageUrl.[0]}}" alt="No image" style="width: 400px;height:400px;overflow: hidden;" class="a">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; padding-top: 30px;">
+          <div style=" height: 70px; width: 110px;display: flex;" >
+            <img src="{{product.imageUrl.[0]}}" style="width: 100px; height: 60px; overflow: hidden;border: solid black 1px;padding: 5px;" alt="No image" class="b">
+          </div>
+          <div style=" height: 70px; width: 110px;display: flex;" >
+            <img src="{{product.imageUrl.[1]}}" style="width: 100px; height: 60px; overflow: hidden;border: solid black 1px;padding: 5px;" alt="No image" class="c">
+          </div>
+          <div style=" height: 70px; width: 110px;display: flex;" >
+            <img src="{{product.imageUrl.[2]}}" style="width: 100px; height: 60px; overflow: hidden;border: solid black 1px;padding: 5px;" alt="No image" class="d">
+          </div>
+          
+        </div>
+
+    </div>
+    <div class="content-container">
+        <h2>{{product.name}}</h2>
+
+        {{!-- <div class="quantity-box">
+            <div class="quantity-button" data-quantity="50" onclick="updateQuantity(50)">50 grams</div>
+            <div class="quantity-button" data-quantity="100" onclick="updateQuantity(100)">100 grams</div>
+            <div class="quantity-button" data-quantity="200" onclick="updateQuantity(200)">200 grams</div>
+            <div class="quantity-button" data-quantity="300" onclick="updateQuantity(300)">300 grams</div>
+        </div> --}}
+
+        <div class="quantity-box">
+            <div class="color-box" style="background-color: #ffcccb;" onclick="selectColor(this)"></div>
+            <div class="color-box" style="background-color: #c2f0c2;" onclick="selectColor(this)"></div>
+            <div class="color-box" style="background-color: #add8e6;" onclick="selectColor(this)"></div>
+        </div>
+
+        <div class="quantity-box">
+            <form action="/cart/{{product._id}}" method="post" onsubmit="addToCart('{{product._id}}')">
+            
+           <label for="quantity">quantity: </label>
+            <select name="quantity" id="quantity" class="quantity-input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <button type="submit">Add to Cart</button>
+        </div>
+
+        <div class="total-price" id="total-price">Price : {{product.price}}</div>
+
+        </form>
+        <div class="total-price" id="total-price">description : {{product.description}}</div>
+    </div>
+</div>
+
+
+<script>
+  let img=document.querySelector(".a");
+  let aimg=document.querySelector(".b");
+  let bimg=document.querySelector(".c");
+  let cimg=document.querySelector(".d");
+
+
+  bimg.style.border="none";
+  cimg.style.border="none";
+  aimg.style.border="solid red 2px"
+  aimg.addEventListener("click", function(){
+    img.setAttribute("src",aimg.src);
+    bimg.style.border="none";
+    cimg.style.border="none";
+    
+    aimg.style.border="solid red 2px";
+  });
+  bimg.addEventListener("click",function(){
+    img.setAttribute("src",bimg.src);
+    aimg.style.border="none";
+    cimg.style.border="none";
+    
+    bimg.style.border="solid red 2px";
+  });
+  cimg.addEventListener("click",function(){
+    img.setAttribute("src",cimg.src);
+    bimg.style.border="none";
+    aimg.style.border="none";
+    
+    cimg.style.border="solid red 2px";
+  })
+
+</script>
+<script src="/scripts/addtocart.js"></script>
+</body>
+</html>

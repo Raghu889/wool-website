@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+   <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-image-container">
+            <img src="/images/istockphoto-500613590-612x612.jpg" alt="">
+        </div>
+        <div class="login-container">
+            <form class="login-form" action="/homepage" method="post">
+                <h2>Login</h2>
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+                <label for="password">Password:</label>
+                {{#if errormessage}}
+                <p class="error">{{errormessage}}</p>
+                {{/if}}
+                <div class="password-div">
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <img src="images/noun-show-password-777505.png" alt="" class="show" onclick="showpass();">
+                </div>
+                
+                <input type="submit" class="button">
+                <p style="color: white;">Don't have an accounat? <a href="/signup">Sign up</a></p>
+            </form>
+        </div>
+        <script src="/scripts/login.js"></script>
+    </div>
+</body>
+</html>

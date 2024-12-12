@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Page</title>
+    <link rel="stylesheet" href="/css/yoursorders.css">
+    <style>
+        .success{
+            margin-top: 3px;
+            background-image: url(/images/sparkle-confetti.gif);
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main-top">
+        <div class="logo-div">
+            <img src="/images/logo-removebg-preview.png" alt="Woolymo Logo" class="logo">
+            <h1 class="logo-name">Woolymo</h1>
+        </div>
+        <div class="search-div">
+            {{!-- <input type="text" placeholder="Search here" class="search-bar">
+            <img src="/images/WhatsApp Image 2023-12-06 at 18.56.14_bc3f23bf.jpg" alt="Search Icon" class="search-icon"> --}}
+        </div>
+        <div class="space"></div>
+        <div class="profile-div">
+            <ul>
+            {{#if currentUser}}
+           <li class="list1"><a href="/profile"> <img src="{{user.image}}" alt="User Profile" class="user-profile"></a><p>{{user.name}}</p></li>
+           {{else}}
+           <li class="list2"><a href="/login"> <img src="/images/WhatsApp_Image_2023-12-06_at_18.56.13_adc62e0f-removebg-preview.png" alt="User Profile" class="user-profile"></a><p>Login</p></li>
+           {{/if}}
+           </ul>
+        </div>
+    </div>
+    <nav class="navigation-div">
+        <a href=""></a>
+        <a href="/homepage" class="Home">Home</a>
+        <a href="/orders" class="Orders" style="border: solid white 1px;">Orders</a>
+        <a href="/products"  class="Cart">Products</a>
+        <a href="/cart" class="About-us">cart</a>
+        <a href="/about" class="Contact-us">Contact us</a>
+        <a href=""></a>
+    </nav>
+{{#if success}}
+    <div class="success" style="text-align: center;">
+        <div>
+        <img src="/images/output-onlinegiftools.gif" alt="" style="height: 100px;">
+        </div>
+        <div>
+         <h1 style="color: rgb(81, 158, 81);">{{success}}</h1>
+        </div>
+    </div>
+    {{/if}}
+    <div class="orders-section">
+        <h2>Your Orders</h2>
+    </div>
+    <ul>
+        {{#each orderedproducts}}
+        <li>
+
+       
+    <div class="order-container">
+        <div class="order-details">
+            <img class="product-image" src="{{this.imageUrl.[0]}}" alt="Product Image">
+            <div class="product-info">
+                <span class="product-name"> {{this.name}} </span>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+        
+        <p class="price">Price: {{this.price}}</p>
+        <p class="price">Quantity: {{this.quantity}}</p>
+        <div class="order-actions">
+            <button onclick="Track('{{this._id}}')">Track Order</button>
+            <button onclick="CancelOrder('{{this._id}}')">Cancel Order</button>
+            
+            {{!-- <a href="/cancel/{{this._id}}">Cancel Order</a> --}}
+            
+        </div>
+    </div>
+
+     </li>
+    {{/each}}
+    </ul>
+    
+
+    <script src="/scripts/orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/youraddresses.css">
+</head>
+<body>
+        <a href="/addaddress/{{user._id}}">+Add address</a>
+
+                {{#each addaddress}}
+    <form  onsubmit="selectaddress('{{this._id}}')">
+        <div  class="container">
+            <marquee behavior="" direction="">Select your Delivery Address</marquee>
+            <ul  class="address-list">
+                <li  class="address-item">
+
+            <label name="add" for="add" id="add">
+                <h2>{{this.Full_Name}}</h2>
+                <p>Mobile Number: {{this.Mobile_Number}}</p>
+                 <p>Address: {{this.Flat_Building_Company_HouseNo_Apartment}}, {{this.Area_Street_Sector_Village}}, {{this.Town_City}}, {{this.State}}, {{this.Pincode}}</p>
+            <p>Landmark: {{this.Landmark}}</p>
+            <br>
+            </label>
+            
+            <button class="submit" type="submit">submit</button>
+            <a href="/payment/{{this._id}}">submit</a>
+                </li>
+    </form>
+                {{/each}}
+            </ul>
+        </div>
+
+        <script src="/scripts/selectaddress.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    
+</head>
+
+<body>
+    <div class="main-top">
+        <div class="back_arrow_div">
+            <a href="/homepage" class="back-arrow" style="text-decoration: none;">
+                &#8592;
+            </a>
+        </div>
+        <h1>User Profile</h1>
+    </div>
+
+
+    <div class="profile-container">
+        <div class="profile-image">
+            <img src="{{user.image}}">
+        </div>
+        <div class="user-details">
+            <h2> {{user.name}} </h2>
+            <p>Email: {{user.email}}</p>
+            <p>Phone: {{user.mobile}}</p>
+            <p>address: {{user.address}}</p>
+        </div>
+        <a href="/updateprofile" class="edit-profile">Edit Profile</a>
+        <a href="/additems" class="edit-profile">Add Products</a>
+        <a href="/Youraddress/{{user._id}}" class="edit-profile">Your Addresses</a>
+        <div class="logout">
+            <a href="/logout">Logout</a>
+        </div>
+    </div> 
+    <h2>My Products</h2>
+<ul>
+        {{#each userproducts}}
+        <li>
+
+       
+    <div class="order-container">
+        <div class="order-details">
+           <a href="/{{this._id}}"> <img class="product-image" src="{{this.imageUrl.[0]}}" alt="Product Image"></a>
+            <div class="product-info">
+                <span class="product-name"> {{this.name}} </span>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+        
+        <p class="price">Price: {{this.price}}</p>
+        <div class="order-actions">
+            {{!-- <button onclick="addToCart('{{this._id}}')" id="addtocart">Add to Cart</button> --}}
+            <button onclick="deleteItem('{{this._id}}')">Delete</button>
+        </div>
+    </div>
+
+     </li>
+    {{/each}}
+    </ul>
+    
+
+<script src="/scripts/deleted.js"></script>
+</body>
+
+
+
+
+
+</html>

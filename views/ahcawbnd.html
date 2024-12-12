@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woolymo</title>
+    <link rel="stylesheet" href="/public/css/homepage.css">
+    <style>
+        .completediv{
+            display: flex;
+            flex-direction: row;
+            border: solid black 1px;
+            padding: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+
+        .a,.b,.c,.d,.e,.f{
+            margin-bottom: 20px;
+            width: 500px;
+            margin-left: 40px;
+            box-shadow: 3px 3px 3px black;
+            border-radius: 1px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .a img{
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-top">
+        <div class="logo-div">
+            <img src="/public/images/logo-removebg-preview.png" alt="Woolymo Logo" class="logo">
+            <h1 class="logo-name">Woolymo</h1>
+        </div>
+        <div class="search-div">
+            <input type="text" placeholder="Search here" class="search-bar">
+            <img src="/public/images/WhatsApp Image 2023-12-06 at 18.56.14_bc3f23bf.jpg" alt="Search Icon" class="search-icon">
+        </div>
+        <div class="space">
+            <p></p>
+        </div>
+        <div class="profile-div">
+            <ul>
+           
+           <li class="list1"><a href="/profile"> <img src="{{user.image}}" alt="User Profile" class="user-profile"></a><p></p></li>
+        <div class="orderrequest">
+            
+        </div>
+        
+           <li class="list2"><a href="/login"> <img src="/public/images/WhatsApp_Image_2023-12-06_at_18.56.13_adc62e0f-removebg-preview.png" alt="User Profile" class="user-profile"></a><p>Login</p></li>
+    
+           </ul>
+            
+        </div>
+        <a href="/orderrequest/{{user._id}}"><img src="/images/noun-bell-75749.png" alt="" class="notify"></a>
+    </div>
+    <div class="navigation-div">
+        <a href="#" class="empty"></a>
+        <a href="" class="Home">Home</a>
+        <a href="/orders" class="Orders">Orders</a>
+        <a href="/products"  class="Cart">Products</a>
+        <a href="/cart" class="About-us">cart</a>
+        <a href="/about" class="Contact-us">Contact us</a>
+        <a href="" class="empty"></a>
+    </div>
+    <div class="slider-div">
+        <img src="/public/images/istockphoto-500613590-612x612.jpg"
+            alt="Special Offer 1">
+        <img src="/public/images/sam-carter-GHOiyov2TSQ-unsplash.jpg" alt="Special Offer 2">
+        <img src="/public/images/annie-spratt-Ga2AJxjDr9o-unsplash.jpg" alt="Special Offer 3">
+    </div>
+    <div>
+        <h2>Recommended for you</h2>
+    </div>
+    <div class="recommendations-div">
+       
+        <div class="product">
+            <div class="product-image">
+                <img src="" alt="Product 1">
+            </div>
+            <div class="product-details">
+                <h3></h3>
+                <p>  </p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+       
+
+        <div class="product">
+            <div class="product-image">
+                <img src="/public/images/OIP__1_-removebg-preview (2).png" alt="Product 2">
+            </div>
+            <div class="product-details">
+                <h3>Product</h3>
+                <p>Product</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="/public/images/jean-marc-vieregge-cDKqFb-NOZc-unsplash.jpg" alt="Product 3">
+            </div>
+            <div class="product-details">
+                <h3>Product</h3>
+                <p>Product</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="/public/images/annie-spratt-ibBWe3GjqVU-unsplash.jpg" alt="Product 4">
+            </div>
+            <div class="product-details">
+                <h3>Product</h3>
+                <p>Product</p>
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </div>
+   <h1>
+    Wool Insights
+   </h1>
+   <div class="container_insight">
+    <img src="/public/images/home.png" alt="">
+    <p>
+        In 2021-22, the total wool production in India was 33.13 thousand tonnes, which was a 10.30% decrease from the previous year.
+India's annual wool production is around 43-46 million kg, which is about 2% of the world's total production.
+India's wool and woolen industry is the seventh-largest in the world and is an important sector of India's rural economy.
+About 85% of India's wool production is carpet grade wool, 5% is apparel grade, and 10% is coarser grade wool for making blankets.
+    </p>
+    <h2>Graph of wool production in India from 2015-2022: </h2>
+    <img src="/public/images/wool-new-1.jpg" alt="">
+    <h2>Production of monthly: </h2>
+    <img src="" alt="">
+   </div>
+
+   <div class="completediv">
+    <div >
+        <div class="a">
+            <img src="/public/images/annie-spratt-Ga2AJxjDr9o-unsplash.jpg" alt="">
+            <h2>happy birthday1</h2>
+            <p>asdfghm  hasd vhavfsvs vhabv v Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti temporibus cupiditate rerum natus amet voluptatum, quisquam velit quos eligendi iusto, libero ipsum molestiae asperiores dolorum pariatur eveniet! Nihil, quis impedit.</p>
+        </div>
+        <div class="b">
+            <img src="/public/images/annie-spratt-Ga2AJxjDr9o-unsplash.jpg" alt="">
+            <h2>happy birthday2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deserunt voluptates fugit non temporibus nisi quo? Eum est temporibus ad architecto natus impedit excepturi iste maiores! Adipisci officia aut saepe.</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="c">
+            <h1>wool insights</h1>
+            <h2>happy birthday</h2>
+        </div>
+        <div class="d">
+            <img src="/public/images/annie-spratt-Ga2AJxjDr9o-unsplash.jpg" alt="">
+            <h2>happy birthday</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem iste nihil quis nemo veritatis fugit? Laboriosam odit, corporis itaque praesentium autem nam, sequi voluptatum maxime labore voluptatibus, commodi repellat incidunt.</p>
+        </div>
+    </div>
+
+    <div>
+        <div class="e">
+            <img src="/public/images/annie-spratt-Ga2AJxjDr9o-unsplash.jpg" alt="">
+            <h2>happy birthday</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo suscipit atque ratione sequi rem quia provident magni non tempore, consequuntur nostrum velit temporibus culpa dolore, deserunt aliquid et sunt corrupti!</p>
+        </div>
+        <div class="f">
+            <img src="/public/images/annie-spratt-Ga2AJxjDr9o-unsplash.jpg" alt="">
+            <h2>happy birthday</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit accusamus, nobis accusantium, tenetur ad assumenda modi dolorum natus tempore saepe est laudantium cum ab? Praesentium voluptates ad harum quasi est.
+            </p>
+        </div>
+    </div>
+   </div>
+    <script src="/public/scripts/homepage.js"></script>
+    
+    
+        
+</body>
+
+</html>

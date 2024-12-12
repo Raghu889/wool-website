@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woolymo</title>
+    <link rel="stylesheet" href="/css/homepage.css">
+</head>
+
+<body>
+
+    <div class="main-top">
+        <div class="logo-div">
+            <img src="/images/logo-removebg-preview.png" alt="Woolymo Logo" class="logo">
+            <h1 class="logo-name">Woolymo</h1>
+        </div>
+        <div class="search-div">
+            {{!-- <input type="text" placeholder="Search here" class="search-bar"> --}}
+            {{!-- <img src="/images/WhatsApp Image 2023-12-06 at 18.56.14_bc3f23bf.jpg" alt="Search Icon" class="search-icon"> --}}
+        </div>
+        <div class="space">
+            <p></p>
+        </div>
+        <div class="profile-div">
+            <ul>
+            {{#if currentUser}}
+           <li class="list1"><a href="/profile"> <img src="{{user.image}}" alt="User Profile" class="user-profile"></a><p>{{user.name}}</p></li>
+        <div class="orderrequest">
+            
+        </div>
+           {{else}}
+           <li class="list2"><a href="/login"> <img src="/images/WhatsApp_Image_2023-12-06_at_18.56.13_adc62e0f-removebg-preview.png" alt="User Profile" class="user-profile"></a><p>Login</p></li>
+           {{/if}}
+           </ul>
+            
+        </div>
+        {{#if orders}}
+        <a href="/orderrequest/{{user._id}}"><img src="/images/81b0c3cfaa792f625c8dbecbf0bccb17d7f1d62b-removebg-preview.png" alt="" class="notify"></a>
+        {{else}}
+        <a href="/orderrequest/{{user._id}}"><img src="/images/noun-bell-75749.png" alt="" class="notify"></a>
+        {{/if}}
+    </div>
+    <div class="navigation-div">
+        <a href="#" class="empty"></a>
+        <a href="" class="Home">Home</a>
+        <a href="/orders" class="Orders">Orders</a>
+        <a href="/products"  class="Cart">Products</a>
+        <a href="/cart" class="About-us">cart</a>
+        <a href="/about" class="Contact-us">Contact us</a>
+        <a href="" class="empty"></a>
+    </div>
+    <div class="slider-div">
+        <img src="/images/Screenshot 2024-03-29 225552.png"
+            alt="Special Offer 1">
+        <img src="./images/sam-carter-GHOiyov2TSQ-unsplash.jpg" alt="Special Offer 2">
+        <img src="./images/annie-spratt-Ga2AJxjDr9o-unsplash.jpg" alt="Special Offer 3">
+    </div>
+    <div class="topseller">
+        <h2>Top sellers</h2>
+    </div>
+    <div class="recommendations-div">
+      {{#each products}}
+
+        <div class="product">
+            <div class="">
+                <a href="/product/{{this._id}}">
+                <img src="{{this.imageUrl}}" alt="Product 1">
+                </a>
+            </div>
+            <div class="product-details">
+                <h3>{{this.name}}</h3>
+                <p>Price: {{this.price}} </p>
+                
+            </div>
+        </div>
+ 
+{{/each}}
+
+
+        
+
+        
+    </div>
+   
+    
+    <div class="container">
+        <div></div>
+        <div class="a">
+            <div class="grid-item a1">
+                <img src="/images/WhatsApp Image 2024-02-13 at 11.32.44_020cf2b1.jpg" alt="">
+                <h2>Types of Wool</h2>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h2>Types of Wool</h2>
+                        <p>India's wool industry boasts diverse varieties including luxurious Pashmina from Kashmir, robust carpet wool from Rajasthan, and coarser wool from the Deccan Plateau. Merino breeds thrive in northern hilly areas. Avikalin wool, a sustainable option, and crossbred wool further contribute to India's rich textile landscape.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item a2">
+                <img src="/images/WhatsApp Image 2024-02-13 at 14.06.32_ad946abe.jpg" alt="">
+                <h2>Production Across India</h2>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h2>Production Across the India</h2>
+                        <p>
+                            Wool production in India encompasses diverse climates and regions, yielding various types of fleece. From the luxurious Pashmina of Kashmir to robust Deccani wool, each region contributes to India's rich textile heritage. Sustainable practices and traditional craftsmanship underscore the significance of wool production across the country.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div></div>
+        <div class="b">
+            <div></div>
+            <div class="grid-item b1">
+                <img src="/images/istockphoto-133418931-612x612.jpg" alt="">
+                <h1>Overview of Wool Insights</h1>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h2>Overview of Wool Insights</h2>
+                        <p>
+                            Wool production in India encompasses diverse climates and regions, yielding various types of fleece. From the luxurious Pashmina of Kashmir to robust Deccani wool, each region contributes to India's rich textile heritage. Sustainable practices and traditional craftsmanship underscore the significance of wool production across the country.</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div></div>
+        </div>
+        <div></div>
+        <div class="c">
+            <div class="grid-item c1">
+                <img src="images/R.png" alt="">
+                <h2>Consumption across India</h2>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h2>World Wide Consumption</h2>
+                        <p>
+                            Consumption across India reflects diverse cultural, economic, and geographical influences. Urban areas witness a surge in demand for modern goods and services, driven by rising disposable incomes. Meanwhile, rural communities maintain traditional consumption patterns, emphasizing essentials and locally-made products. This dynamic balance characterizes India's consumption landscape.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item c2">
+                <img src="/images/WhatsApp Image 2024-02-13 at 11.32.44_c340dd8e.jpg" alt="">
+                <h2>Wide Range of Uses</h2>
+                <div class="overlay">
+                    <div class="overlay-content">
+                        <h2>Wide Range of Uses</h2>
+                        <p>
+                            Wool's versatility extends across diverse applications, from clothing to insulation. It offers warmth, breathability, and durability in garments, blankets, and outerwear. Additionally, wool's moisture-wicking properties make it ideal for sportswear. Its natural flame resistance and sound absorption qualities also find applications in upholstery and interior textiles, showcasing wool's wide-ranging utility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div></div>
+    </div>
+    <footer>
+        <h2>
+<a href="">
+        Terms and services
+</a>
+        </h2>
+    </footer>
+
+    <script src="/scripts/homepage.js"></script>
+    
+    
+        
+</body>
+
+</html>

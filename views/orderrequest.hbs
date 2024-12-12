@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orderrequests</title>
+    <link rel="stylesheet" href="/css/orderrequest.css">
+</head>
+<body>
+   <div class="main-top">
+        <div class="logo-div">
+            <img src="/images/logo-removebg-preview.png" alt="Woolymo Logo" class="logo">
+            <h1 class="logo-name">Woolymo</h1>
+        </div>
+        <div class="search-div">
+            {{!-- <input type="text" placeholder="Search here" class="search-bar">
+            <img src="/images/WhatsApp Image 2023-12-06 at 18.56.14_bc3f23bf.jpg" alt="Search Icon" class="search-icon"> --}}
+        </div>
+        <div class="space">
+            <p></p>
+        </div>
+        <div class="profile-div">
+            <ul>
+            {{#if currentUser}}
+           <li class="list1"><a href="/profile"> <img src="{{user.image}}" alt="User Profile" class="user-profile"></a><p>{{user.name}}</p></li>
+        <div class="orderrequest">
+            
+        </div>
+           {{else}}
+           <li class="list2"><a href="/login"> <img src="/images/WhatsApp_Image_2023-12-06_at_18.56.13_adc62e0f-removebg-preview.png" alt="User Profile" class="user-profile"></a><p>Login</p></li>
+           {{/if}}
+           </ul>
+            
+        </div>
+    </div>
+    <div class="navigation-div">
+        <a href="#" class="empty"></a>
+        <a href="/homepage" class="Home">Home</a>
+        <a href="/orders" class="Orders">Orders</a>
+        <a href="/products"  class="Cart">Products</a>
+        <a href="/cart" class="About-us">cart</a>
+        <a href="/about" class="Contact-us">Contact us</a>
+        <a href="" class="empty"></a>
+    </div>
+    {{#if orderrequests}}
+    <img src="/images/congratulations-11-usagif.gif" alt="" class="congrats">
+    <div class="glad">
+        <div>
+            {{!-- <h1 >
+                congratulations user!
+            </h1> --}}
+            <h1>
+                "We are glad to inform you that a buyer is ready to buy your product."
+            </h1>
+
+        </div>
+        {{else}}
+        <div>
+        <h2>
+            "We currently do not have any orderrequests for your products."
+        </h2>
+        </div>
+        {{/if}}
+        {{#each orderrequests}}
+        <div class="order-container">
+            <div class="order-details">
+                <img class="product-image" src="{{this.imageUrl.[0]}}" alt="Product Image">
+                <div class="product-info">
+                    <span class="product-name">{{this.name}}</span>
+                    <div class="rating">★★★★☆</div>
+                </div>
+            </div>
+            <p class="order-date">Order Date: {{this.date}}</p>
+            <p class="price">Price: {{this.price}}</p>
+            <p class="price">Quantity: {{this.quantity}}</p>
+            <p class="price">Buyername: {{this.buyername}}</p>
+            <p class="price">Address: {{this.address}} </p>
+            {{!-- <div class="order-actions">
+                <form action="/updateddelivery/{{this.productBuyer}}">
+                <label for="orderplaced" > orderplaced</label>
+                <input type="checkbox" name="orderplaced" id="">
+                <label for="shipped">shipped</label>
+                <input type="checkbox" name="shipped" id="">
+                <label for="outfordelivery">outfordelivery</label>
+                <input type="checkbox" name="outfordelivery" id="">
+                <label for="orderdelivered">orderdelivered</label>
+                <input type="checkbox" name="orderdelivered" id="">
+                <button type="submit">update</button>                
+                </form>            
+            </div> --}}
+
+            <p>
+                "Our driver is out to take order!"
+            </p>
+        </div>
+    {{/each}}
+    </div>
+</body>
+</html>

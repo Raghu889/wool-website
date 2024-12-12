@@ -1,0 +1,29 @@
+.box{
+    position: relative;
+    top: 150px;
+    left: 500px;
+    height: 400px;
+    width: 400px;
+    box-shadow: 3px 3px 3px;
+}
+.pay{
+    background-color: #023e8a;
+    height: 40px;
+    width: 400px;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+label, input, button {
+    display: block;
+    margin-bottom: 10px;
+}
+.details input{
+    height: 30px;
+    width: 200px;
+}
+.details{
+    position: relative;
+    top: 60px;
+    left: 90px;
+}

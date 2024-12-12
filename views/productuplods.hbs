@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Upload</title>
+    <link rel="stylesheet" href="/css/productsuplod.css">
+</head>blic
+<body>
+    <div class="main-top">
+        <div class="logo-div">
+            <img src="/images/logo-removebg-preview.png" alt="Woolymo Logo" class="logo">
+            <h1 class="logo-name">Woolymo</h1>
+        </div>
+        <div class="search-div">
+            {{!-- <input type="text" placeholder="Search here" class="search-bar">
+            <img src="/images/WhatsApp Image 2023-12-06 at 18.56.14_bc3f23bf.jpg" alt="Search Icon" class="search-icon"> --}}
+        </div>
+        <div class="space">
+            <p></p>
+        </div>
+        <div class="profile-div">
+            <ul>
+            {{#if currentUser}}
+           <li class="list1"><a href="/profile"> <img src="{{user.image}}" alt="User Profile" class="user-profile"></a><p>{{user.name}}</p></li>
+        <div class="orderrequest">
+            
+        </div>
+           {{else}}
+           <li class="list2"><a href="/login"> <img src="/images/WhatsApp_Image_2023-12-06_at_18.56.13_adc62e0f-removebg-preview.png" alt="User Profile" class="user-profile"></a><p>Login</p></li>
+           {{/if}}
+           </ul>
+            
+        </div>
+        
+    </div>
+    <div class="navigation-div">
+        <a href="#" class="empty"></a>
+        <a href="" class="Home">Home</a>
+        <a href="/orders" class="Orders">Orders</a>
+        <a href="/products"  class="Cart">Products</a>
+        <a href="/cart" class="About-us">cart</a>
+        <a href="/about" class="Contact-us">Contact us</a>
+        <a href="" class="empty"></a>
+    </div>
+    <h1 class="upload-head">Product Upload</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data" class="form">
+        <label for="name" class="product-name">Product Name:</label>
+        <input type="text" id="name" name="name" required class="name-input"><br>
+
+        <label for="typeselection" class="product-name">Wool Type:</label>
+        <select name="typeselection" id="selection" class="name-input">
+            <option value="Merino Wool">Merino Wool</option>
+            <option value="Lamb Wool">Lamb Wool</option>
+            <option value="Cashmere Wool">Cashmere Wool</option>
+            <option value="Angora Wool">Angora Wool</option>
+            <option value="Alpaca Wool">Alpaca Wool</option>
+            <option value="Mohair Wool">Mohair Wool</option>
+            <option value="Camel hair">Camel Wool(Camel hair)</option>
+            
+        </select>
+
+        <label for="price" class="product-price">Product Price(Per 1 kilogram):</label>
+        <input type="number" id="price" name="price" required class="price-input"><br>
+
+        <label for="description" class="pd">Product Description:</label>
+        <textarea id="description" name="description" required class="pd-input"></textarea><br>
+
+        <label for="image" class="pimage">Product Image:</label>
+        <input class="image-input" type="file" id="images" name="images" multiple><br>
+
+        <button class="submit-but" type="submit">Upload Product</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders Page</title>
+    <link rel="stylesheet" href="/css/products.css">
+</head>
+<body>
+    <div class="main-top">
+        <div class="logo-div">
+            <img src="images/logo-removebg-preview.png" alt="Woolymo Logo" class="logo">
+            <h1 class="logo-name">Woolymo</h1>
+        </div>
+        <div class="search-div">
+            {{!-- <input type="text" placeholder="Search here" class="search-bar">
+            <img src="./images/WhatsApp Image 2023-12-06 at 18.56.14_bc3f23bf.jpg" alt="Search Icon" class="search-icon"> --}}
+        </div>
+        <div class="space"></div>
+        <div class="profile-div">
+             <ul>
+            {{#if currentUser}}
+           <li class="list1"><a href="/profile"> <img src="{{user.image}}" alt="User Profile" class="user-profile"></a><p>{{user.name}}</p></li>
+           {{else}}
+           <li class="list2"><a href="/login"> <img src="./images/WhatsApp_Image_2023-12-06_at_18.56.13_adc62e0f-removebg-preview.png" alt="User Profile" class="user-profile"></a><p>Login</p></li>
+           {{/if}}
+           </ul>
+        </div>
+    </div>
+    <nav class="navigation-div">
+        <a href=""></a>
+        <a href="/homepage" class="Home">Home</a>
+        <a href="/orders" class="Orders">Orders</a>
+        <a href="/products"  class="Products">Products</a>
+        <a href="/cart" class="About-us">cart</a>
+        <a href="/about" class="Contact-us">Contact us</a>
+        <a href=""></a>
+    </nav>
+
+    <div class="orders-section">
+        <h2>Products</h2>
+    </div>
+    <div class="orders-section">
+        <h2>Merino Wool</h2>
+    </div>
+    <div id="notification-container"></div>
+    <ul>
+        {{#each merinowool}}
+        <li>
+
+       <img src="{{this.imageUrl}}" alt="" class="disImage">
+    <div class="order-container" style="">
+        <div class="order-details">
+           <a href="/product/{{this._id}}"> <img class="product-image" src="{{this.imageUrl}}" alt="Product Image"></a>
+            <div class="product-info">
+                <span class="product-name"> {{this.name}} </span>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+        
+        <p class="price">Price: {{this.price}}</p>
+        <p class="price">Wooltype: {{this.woolType}}</p>
+        <form action="/cart/{{this._id}}" method="post" onsubmit="addToCart('{{this._id}}')">
+            <label for="quantity">quantity: </label>
+            <select name="quantity" id="quantity" class="quantity-input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            
+        <div class="order-actions">
+            <button type="submit">Add to Cart</button>
+            </form>
+            {{!-- <button onclick="addToCart('{{this._id}}')" id="addtocart">Add to Cart</button> --}}
+            
+        </div>
+    </div>
+
+     </li>
+    {{/each}}
+    </ul>
+
+
+    <div class="orders-section">
+        <h2>lamb Wool</h2>
+    </div>
+    <div id="notification-container"></div>
+    <ul>
+        {{#each lambwool}}
+        <li>
+
+       <img src="{{this.imageUrl}}" alt="" class="disImage">
+    <div class="order-container" style="">
+        <div class="order-details">
+           <a href="/product/{{this._id}}"> <img class="product-image" src="{{this.imageUrl}}" alt="Product Image"></a>
+            <div class="product-info">
+                <span class="product-name"> {{this.name}} </span>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+        
+        <p class="price">Price: {{this.price}}</p>
+        <p class="price">Wooltype: {{this.woolType}}</p>
+        <form action="/cart/{{this._id}}" method="post" onsubmit="addToCart('{{this._id}}')">
+            <label for="quantity">quantity: </label>
+            <select name="quantity" id="quantity" class="quantity-input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            
+        <div class="order-actions">
+            <button type="submit">Add to Cart</button>
+            </form>
+            {{!-- <button onclick="addToCart('{{this._id}}')" id="addtocart">Add to Cart</button> --}}
+            
+        </div>
+    </div>
+
+     </li>
+    {{/each}}
+    </ul>
+
+
+    
+
+    <div class="orders-section">
+        <h2>Cashmere Wool</h2>
+    </div>
+    <div id="notification-container"></div>
+    <ul>
+        {{#each cashmerewool}}
+        <li>
+
+       <img src="{{this.imageUrl}}" alt="" class="disImage">
+    <div class="order-container" style="">
+        <div class="order-details">
+           <a href="/product/{{this._id}}"> <img class="product-image" src="{{this.imageUrl}}" alt="Product Image"></a>
+            <div class="product-info">
+                <span class="product-name"> {{this.name}} </span>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+        
+        <p class="price">Price: {{this.price}}</p>
+        <p class="price">Wooltype: {{this.woolType}}</p>
+        <form action="/cart/{{this._id}}" method="post" onsubmit="addToCart('{{this._id}}')">
+            <label for="quantity">quantity: </label>
+            <select name="quantity" id="quantity" class="quantity-input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            
+        <div class="order-actions">
+            <button type="submit">Add to Cart</button>
+            </form>
+            {{!-- <button onclick="addToCart('{{this._id}}')" id="addtocart">Add to Cart</button> --}}
+            
+        </div>
+    </div>
+
+     </li>
+    {{/each}}
+    </ul>
+
+    <div class="orders-section">
+        <h2>Angora Wool</h2>
+    </div>
+    <div id="notification-container"></div>
+    <ul>
+        {{#each angorawool}}
+        <li>
+
+       <img src="{{this.imageUrl}}" alt="" class="disImage">
+    <div class="order-container" style="">
+        <div class="order-details">
+           <a href="/product/{{this._id}}"> <img class="product-image" src="{{this.imageUrl}}" alt="Product Image"></a>
+            <div class="product-info">
+                <span class="product-name"> {{this.name}} </span>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+        
+        <p class="price">Price: {{this.price}}</p>
+        <p class="price">Wooltype: {{this.woolType}}</p>
+        <form action="/cart/{{this._id}}" method="post" onsubmit="addToCart('{{this._id}}')">
+            <label for="quantity">quantity: </label>
+            <select name="quantity" id="quantity" class="quantity-input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            
+        <div class="order-actions">
+            <button type="submit">Add to Cart</button>
+            </form>
+            {{!-- <button onclick="addToCart('{{this._id}}')" id="addtocart">Add to Cart</button> --}}
+            
+        </div>
+    </div>
+
+     </li>
+    {{/each}}
+    </ul>
+
+    <div class="orders-section">
+        <h2>Alpaca Wool</h2>
+    </div>
+    <div id="notification-container"></div>
+    <ul>
+        {{#each alpacawool}}
+        <li>
+
+       <img src="{{this.imageUrl}}" alt="" class="disImage">
+    <div class="order-container" style="">
+        <div class="order-details">
+           <a href="/product/{{this._id}}"> <img class="product-image" src="{{this.imageUrl.[0]}}" alt="Product Image"></a>
+            <div class="product-info">
+                <span class="product-name"> {{this.name}} </span>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+        
+        <p class="price">Price: {{this.price}}</p>
+        <p class="price">Wooltype: {{this.woolType}}</p>
+        <form action="/cart/{{this._id}}" method="post" onsubmit="addToCart('{{this._id}}')">
+            <label for="quantity">quantity: </label>
+            <select name="quantity" id="quantity" class="quantity-input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            
+        <div class="order-actions">
+            <button type="submit">Add to Cart</button>
+            </form>
+            {{!-- <button onclick="addToCart('{{this._id}}')" id="addtocart">Add to Cart</button> --}}
+            
+        </div>
+    </div>
+
+     </li>
+    {{/each}}
+    </ul>
+    <div class="orders-section">
+        <h2>Mohair Wool</h2>
+    </div>
+    <div id="notification-container"></div>
+    <ul>
+        {{#each mohairwool}}
+        <li>
+
+       <img src="{{this.imageUrl}}" alt="" class="disImage">
+    <div class="order-container" style="">
+        <div class="order-details">
+           <a href="/product/{{this._id}}"> <img class="product-image" src="{{this.imageUrl.[0]}}" alt="Product Image"></a>
+            <div class="product-info">
+                <span class="product-name"> {{this.name}} </span>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+        
+        <p class="price">Price: {{this.price}}</p>
+        <p class="price">Wooltype: {{this.woolType}}</p>
+        <form action="/cart/{{this._id}}" method="post" onsubmit="addToCart('{{this._id}}')">
+            <label for="quantity">quantity: </label>
+            <select name="quantity" id="quantity" class="quantity-input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            
+        <div class="order-actions">
+            <button type="submit">Add to Cart</button>
+            </form>
+            {{!-- <button onclick="addToCart('{{this._id}}')" id="addtocart">Add to Cart</button> --}}
+            
+        </div>
+    </div>
+
+     </li>
+    {{/each}}
+    </ul>
+    <div class="orders-section">
+        <h2>Camel Wool</h2>
+    </div>
+    <div id="notification-container"></div>
+    <ul>
+        {{#each camelwool}}
+        <li>
+
+       <img src="{{this.imageUrl}}" alt="" class="disImage">
+    <div class="order-container" style="">
+        <div class="order-details">
+           <a href="/product/{{this._id}}"> <img class="product-image" src="{{this.imageUrl.[0]}}" alt="Product Image"></a>
+            <div class="product-info">
+                <span class="product-name"> {{this.name}} </span>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+        
+        <p class="price">Price: {{this.price}}</p>
+        <p class="price">Wooltype: {{this.woolType}}</p>
+        <form action="/cart/{{this._id}}" method="post" onsubmit="addToCart('{{this._id}}')">
+            <label for="quantity">quantity: </label>
+            <select name="quantity" id="quantity" class="quantity-input">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            
+         <div class="order-actions">
+            <button type="submit">Add to Cart</button>
+            </form>
+            </div>
+            
+            {{!-- <button onclick="addToCart('{{this._id}}')" id="addtocart">Add to Cart</button> --}}
+    </div>
+
+     </li>
+    {{/each}}
+    </ul>
+
+
+
+
+
+    <script src="/scripts/addtocart.js"></script>
+</body>
+</html>

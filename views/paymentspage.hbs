@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="/css/payments.css">
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> --}}
+</head>
+<body>
+    <script src="pay.js"></script>
+        <div class="box">
+        <div class="pay">Payment</div>
+        <div class="details">
+            <form action="/process_payment" method="post">
+                <label for="card_number"><b>Credit Card Number:</b></label>
+                <input type="text" id="card_number" name="card_number" placeholder="Enter your card number" pattern="[0-9]{16}" title="Enter a 16-digit card number" required>
+            
+                <label for="expiry_date"><b>Expiry Date:</b></label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5" pattern="\d{2}/\d{2}" title="Please enter a valid date in the format MM/YY" oninput="formatExpiryDate(this);" required>
+            
+                <label for="cvv"><b>CVV:</b></label>
+                <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" pattern="\d{3,4}" title="Enter a 3 or 4 digit CVV" required>
+            
+                <button type="submit">Submit Payment</button>
+            </form>
+        </div>
+    </div>
+    <script src="/scripts/payments.js"></script>
+</body>
+</html>

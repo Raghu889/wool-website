@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Addresses</title>
+<link rel="stylesheet" href="/css/youraddresses.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>User Addresses</h1>
+    <a href="/addaddress/{{user._id}}">Add address</a>
+    <ul class="address-list">
+        {{#each useradresses}}
+        <li class="address-item">
+            <h2>{{this.Full_Name}}</h2>
+            <p>Mobile Number: {{this.Mobile_Number}}</p>
+            <p>Address: {{this.Flat_Building_Company_HouseNo_Apartment}}, {{this.Area_Street_Sector_Village}}, {{this.Town_City}}, {{this.State}}, {{this.Pincode}}</p>
+            <p>Landmark: {{this.Landmark}}</p>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+
+</body>
+</html>

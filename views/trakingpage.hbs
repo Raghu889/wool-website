@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/trakingpage.css">
+</head>
+<body>
+    <div class="main-top">
+        <div class="logo-div">
+            <img src="/images/logo-removebg-preview.png" alt="Woolymo Logo" class="logo">
+            <h1 class="logo-name">Woolymo</h1>
+        </div>
+        <div class="search-div">
+            {{!-- <input type="text" placeholder="Search here" class="search-bar">
+            <img src="/images/WhatsApp Image 2023-12-06 at 18.56.14_bc3f23bf.jpg" alt="Search Icon" class="search-icon"> --}}
+        </div>
+        <div class="space">
+            <p></p>
+        </div>
+        <div class="profile-div">
+             <ul>
+            {{#if currentUser}}
+           <li class="list1"><a href="/profile"> <img src="{{user.image}}" alt="User Profile" class="user-profile"></a><p>{{user.name}}</p></li>
+           {{else}}
+           <li class="list2"><a href="/login"> <img src="/images/WhatsApp_Image_2023-12-06_at_18.56.13_adc62e0f-removebg-preview.png" alt="User Profile" class="user-profile"></a><p>Login</p></li>
+           {{/if}}
+           </ul>
+        </div>
+        
+        <img src="/images/notofy.png" alt="" class="notify">
+    </div>
+    <div class="navigation-div">
+        <a href="#" class="empty"></a>
+        <a href="homepage1.html" class="Home">Home</a>
+        <a href="products.html" class="Orders">Orders</a>
+        <a href="products.html"  class="Cart">Cart</a>
+        <a href="" class="About-us">About us</a>
+        <a href="about us.html" class="Contact-us">Contact us</a>
+        <a href="" class="empty"></a>
+    </div>
+    <h1 style="padding-left: 20px;">Order Details</h1>
+    <div class="ord-det">
+        <h3 style="margin-bottom: 5px;">Placed on {{product.date}}</h3>
+        <p style="margin-top: 0px; margin-bottom: 0px;color: rgb(41, 41, 41);">Order 123456</p>
+        <p style="margin-top: 5px; color: rgb(41, 41, 41);">Order Total:	&#8377;10</p>
+        <div class="track">
+            <div class="sent-to">
+                <h3 style="margin-top: 0px; margin-bottom: 5px;">Sent to</h3>
+                <p style="margin-top: 0px; margin-bottom: 0px;color:rgb(41, 41, 41);">{{user.name}}</p>
+                <p style="margin-top: 0px; margin-bottom: 0px;color:rgb(41, 41, 41);">{{user.address}}</p>
+                <p style="margin-top: 0px; margin-bottom: 0px;color:rgb(41, 41, 41);">Phone: {{user.mobile}}</p>
+            </div>
+            <div>
+                <p></p>
+            </div>
+            <div class="paid">
+                <h3 style="margin-top: 0px; margin-bottom: 5px;">Payment</h3>
+                <p style="margin-top: 0px; margin-bottom: 0px;color:rgb(41, 41, 41);">Done</p>
+            </div>
+            <div>
+                <p></p>
+            </div>
+            <div class="total">
+                <h3 style="margin-top: 0px; margin-bottom: 5px;">Summary</h3>
+                <p style="margin-top: 0px; margin-bottom: 0px;color:rgb(41, 41, 41);">item(s) sub-total:<spam style="font-weight:bold">&#8377;{{product.price}}</spam></p>
+                <p style="margin-top: 0px; margin-bottom: 0px;color:rgb(41, 41, 41);">Delivery charges:<spam style="font-weight: bold;">&#8377;</spam></p>
+                <p style="margin-top: 0px; margin-bottom: 0px;color:rgb(41, 41, 41);">Total: <spam style="font-weight: bold;">&#8377;110</spam></p>
+            </div>
+        </div>
+        <div>
+            <div style="display: flex;justify-content: space-between;align-items: center;padding-left: 10px;padding-right: 10px;">
+                <div>
+                    <h2 style=" margin-bottom: 5px;">Shipped</h2>
+                    <p style="margin-top: 0px; margin-bottom: 0px;color: rgb(41,41,41);"><span style="font-weight: bold;">1 product</span>  in this order</p>
+                </div>
+                <div>
+                    <p style="color: rgb(67, 153, 24);margin-bottom: 5px;">it's on the way!</p>
+                    <p style="margin-top: 0px;">Delievery estimation by 24th nov</p>
+                </div>
+            </div>
+            <div class="bar" style="margin-top: 20px;display: flex;">
+                <div style="display: flkex;width: 40px;align-content: center;">
+                    <div class="b">
+                        <p>1</p>
+                    </div>
+                    <div class="a">
+
+                    </div>
+                    <div class="b" style="transform: translateY(-12%);">
+                        <p>2</p>
+                    </div>
+                    <div class="a" style="transform: translateY(-10%);">
+                        
+                    </div>
+                    <div class="b" style="transform: translateY(-52%);">
+                        <p>3</p>
+                    </div>
+                    <div class="a" style="transform: translateY(-19%);">
+                        
+                    </div>
+                    <div  class="b" style="transform: translateY(-68%);">
+                        <p>4</p>
+                    </div>
+                </div>
+                <div>
+                    <div style="margin-bottom: 38px;">
+                        <p style="color: gray;">Order-placed</p>
+                        <p>{{product.date}}</p>
+                    </div>
+                    <div style="margin-bottom: 38px;">
+                        <p style="color: gray;">Shipped</p>
+                        <p>OCT 19</p>
+                    </div>
+                    <div style="margin-bottom: 38px;">
+                        <p style="color: gray;">Out for delivery</p>
+                        <p>OCT 19</p>
+                    </div>
+                    <div style="margin-bottom: 38px;">
+                        <p style="color: gray;">EST-delivery</p>
+                        <p>OCT 19</p>
+                    </div>
+                </div>
+                <div style="margin-left: 60px;">
+                    <div class="order-container">
+                        <div class="order-details">
+                            <img class="product-image" src="{{product.imageUrl.[0]}}" alt="Product Image">
+                            <div class="product-info">
+                                <span class="product-name">pillow</span>
+                                <div class="rating">★★★★☆</div>
+                            </div>
+                        </div>
+                        <p class="order-date">Order Date: {{product.date}}</p>
+                        <p class="price">Price: <span class="span-cost">{{product.price}}</span></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
